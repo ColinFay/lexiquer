@@ -1,0 +1,11 @@
+Package: lexiquer
+Title: Access Lexique3.81, a Natural Language Processing Database for French
+Version: 0.0.0.9000
+Authors@R: person("Colin", "Fay", email = "contact@colinfay.me", role = c("aut", "cre"))
+Description: A wrapper around Lexique 3.81, a Natural Language Processing database for French 
+  maintained by the University of Savoie Mont Blanc. This db contains almost 150K tagged words 
+  in French. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: testthat
