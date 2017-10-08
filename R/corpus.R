@@ -1,6 +1,6 @@
 #' Full lexique
 #'
-#' The full dataset of words from Lexique 3.81
+#' The full dataset of words from Lexique 3.81.
 #'
 #' @format A data frame
 #' \describe{
@@ -41,4 +41,5 @@
 #'   \item{nbmorph}{Number of morphemes}
 #' }
 #' @source \url{http://www.lexique.org}
+
 "corpus"

@@ -49,6 +49,6 @@
 corpus
 }
 \description{
-The full dataset of words from Lexique 3.81
+The full dataset of words from Lexique 3.81.
 }
 \keyword{datasets}
