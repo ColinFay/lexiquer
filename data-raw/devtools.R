@@ -20,12 +20,8 @@ use_vignette("getting started")
 build_vignettes()
 
 # dependencies
-use_package("assertthat")
-use_package("glue")
-use_package("htmltools")
-use_package("magrittr")
-use_package("rvest")
-
+use_package("dplyr")
+use_package("rlang")
 
 # run tests
 

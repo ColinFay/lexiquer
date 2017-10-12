@@ -6,7 +6,7 @@
 #' \describe{
 #'   \item{ortho}{the word}
 #'   \item{phon}{phonological form of the word}
-#'   \item{lemme}{stem of the word}
+#'   \item{lemme}{lemme of the word}
 #'   \item{cgram}{grammatical category}
 #'   \item{genre}{gender (if appliable)}
 #'   \item{nombre}{number}
@@ -42,4 +42,4 @@
 #' }
 #' @source \url{http://www.lexique.org}
 
-"corpus"
+"lexique"

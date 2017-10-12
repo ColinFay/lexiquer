@@ -7,6 +7,8 @@ Description: A wrapper around Lexique 3.81, a Natural Language Processing databa
   in French. 
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
+LazyData: TRUE
 Suggests: testthat
 RoxygenNote: 6.0.1
+Imports: dplyr,
+    rlang
