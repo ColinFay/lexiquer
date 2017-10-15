@@ -10,7 +10,9 @@ output:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "README-"
+  fig.path = "README-", 
+  warning = FALSE, 
+  message = FALSE
 )
 ```
 
@@ -43,9 +45,10 @@ library(tidyverse)
 sw <- proust_stopwords()
 ad <- albertinedisparue
 
-df <- unnest_tokens(ad, word, text) %>%
+tm <- unnest_tokens(ad, word, text) %>%
   count(word) %>%
-  anti_join(sw) %>%
+  anti_join(sw) 
+tm %>%
   left_join(lexique, by = c("word" = "ortho")) %>%
   select(lemme, cgramortho) %>%
   na.omit() %>%
@@ -54,12 +57,21 @@ df <- unnest_tokens(ad, word, text) %>%
   arrange(desc(n))
 ```
 
+### `bind_*` wrappers
+
 `{lexiquer}` provides a series of wrapper to bind specific part of the corpus to your text. See the `bind_*` functions for more details. 
 
 ```{r}
-bind_gram_cat(df, word)
+bind_gram_cat(tm, word)
 ```
 
+### `is_lemme` 
+
+Test if a word is a lemme : 
+
+```{r}
+is_lemme(tm, word)
+```
 
 
 ## Install 
