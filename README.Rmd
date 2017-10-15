@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+Notes: this package is still under development.
+
 # lexiquer
 
 This package is a wrapper around Lexique 3.81, a database for natural language processing in French. 
