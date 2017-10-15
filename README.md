@@ -62,6 +62,8 @@ tm %>%
 
 `{lexiquer}` provides a series of wrapper to bind specific part of the corpus to your text. See the `bind_*` functions for more details.
 
+For example, you can binf the grammatical category of the word:
+
 ``` r
 bind_gram_cat(tm, word)
 #> # A tibble: 13,909 x 3
@@ -99,6 +101,28 @@ is_lemme(tm, word)
 #>  8 abaissées     1 FALSE
 #>  9 abaissées     1 FALSE
 #> 10   abandon     1  TRUE
+#> # ... with 13,899 more rows
+```
+
+### `count_*` wrappers
+
+Several counting functions are available:
+
+``` r
+count_syll(tm, word)
+#> # A tibble: 13,909 x 3
+#>         word     n nbsyll
+#>        <chr> <int>  <int>
+#>  1         1     1     NA
+#>  2      1789     1     NA
+#>  3      1830     1     NA
+#>  4      1848     1     NA
+#>  5      1870     4     NA
+#>  6   abaissé     1      3
+#>  7   abaissé     1      3
+#>  8 abaissées     1      3
+#>  9 abaissées     1      3
+#> 10   abandon     1      3
 #> # ... with 13,899 more rows
 ```
 

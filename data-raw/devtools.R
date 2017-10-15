@@ -13,7 +13,9 @@ use_testthat()
 use_travis()
 
 #init tests
-use_test("init")
+use_test("bind")
+use_test("islemme")
+use_test("counter")
 
 # init vignette
 use_vignette("getting started")

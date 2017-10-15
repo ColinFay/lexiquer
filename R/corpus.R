@@ -32,7 +32,7 @@
 #'   \item{orthrenv}{letters reversal}
 #'   \item{phonrenv}{phonetic reversal}
 #'   \item{orthosyll}{orthographe wiht syllables}
-#'   \item{cgramortho}{grammatical categoory}
+#'   \item{cgramortho}{grammatical category}
 #'   \item{deflem}{pourcentage of people knowing the def of the stem}
 #'   \item{defobs}{number of people who answered with a definition for the stem}
 #'   \item{old20}{Levenshtein orthographic distance}

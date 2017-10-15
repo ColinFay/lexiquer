@@ -7,7 +7,7 @@
 \alias{count_phons}
 \alias{count_syll}
 \alias{count_morph}
-\title{Title}
+\title{Counters}
 \usage{
 count_letters(df, col)
 
@@ -22,8 +22,20 @@ count_syll(df, col)
 count_morph(df, col)
 }
 \arguments{
-\item{col}{}
+\item{df}{the dataframe}
+
+\item{col}{the column with words}
+}
+\value{
+a data.frame with words and a column with the specific count of element
 }
 \description{
-Title
+\describe{
+  \item{count_letters}{counts the number of letters in a word}
+  \item{count_homogr}{counts the number of homograms of a word}
+  \item{count_homoph}{counts the number of homographs of a word}
+  \item{count_phons}{counts the number of phonems in a word}
+  \item{count_syll}{counts the number of syllables in a word}
+  \item{count_morph}{counts the number of morphems in a word}
+}
 }

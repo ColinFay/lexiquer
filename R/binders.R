@@ -1,10 +1,17 @@
 #' Binders functions
 #'
+#' \describe{
+#'   \item{bind_gram_cat}{bind the grammatical category of a word}
+#'   \item{bind_gender}{bind the gender of a word (if appliable)}
+#'   \item{bind_infover}{bind the verbal info of a verb (if appliable)}
+#'}
+#'
 #' @param df the dataframe
 #' @param col the column with words
 #'
 #' @import rlang
 #' @importFrom dplyr select rename
+#' @importFrom utils data
 #'
 #' @return a tibble
 #' @export
@@ -13,58 +20,12 @@
 #'
 #' @examples
 #' ad <- proustr::albertinedisparue
-#' baka <- tidytext::unnest_tokens(ad, mots, text) %>%
-#'     count(mots)
-#' bind_homograph(baka, mots)
-#' bind_gram_cat(baka, mots)
+#' b <- tidytext::unnest_tokens(ad, mots, text) %>%
+#'     count(mots) %>%
+#'     slice(1:10)
+#' bind_homograph(b, mots)
+#' bind_gram_cat(b, mots)
 
-bind_homograph <- function(df, col){
-  data(list = "lexique", package = "lexiquer", envir = environment())
-  col <- enexpr(col)
-  lex <- lexique %>%
-    select(ortho, nbhomogr) %>%
-    rename(!! col := ortho)
-  left_join(df, lex)
-}
-
-#' @rdname binders
-#' @export
-
-bind_homophon <- function(df, col){
-  data(list = "lexique", package = "lexiquer", envir = environment())
-  col <- quo_name(enquo(col))
-  lex <- lexique %>%
-    select(ortho, nbhomoph) %>%
-    rename(!! col := ortho)
-  left_join(df, lex)
-}
-
-#' @rdname binders
-#' @export
-
-bind_phonem <- function(df, col){
-  data(list = "lexique", package = "lexiquer", envir = environment())
-  col <- enexpr(col)
-  lex <- lexique %>%
-    select(ortho, nbphons) %>%
-    rename(!! col := ortho)
-  left_join(df, lex)
-}
-
-#' @rdname binders
-#' @export
-
-bind_morphem <- function(df, col){
-  data(list = "lexique", package = "lexiquer", envir = environment())
-  col <- enexpr(col)
-  lex <- lexique %>%
-    select(ortho, nbmorph) %>%
-    rename(!! col := ortho)
-  left_join(df, lex)
-}
-
-#' @rdname binders
-#' @export
 
 bind_gram_cat <- function(df, col){
   data(list = "lexique", package = "lexiquer", envir = environment())
@@ -99,14 +60,4 @@ bind_infover <- function(df, col){
   left_join(df, lex)
 }
 
-#' @rdname binders
-#' @export
 
-bind_infover <- function(df, col){
-  data(list = "lexique", package = "lexiquer", envir = environment())
-  col <- enexpr(col)
-  lex <- lexique %>%
-    select(ortho, infover) %>%
-    rename(!! col := ortho)
-  left_join(df, lex)
-}

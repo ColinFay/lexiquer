@@ -1,9 +1,18 @@
-#' Title
+#' Counters
 #'
-#' @param df
-#' @param col
+#' \describe{
+#'   \item{count_letters}{counts the number of letters in a word}
+#'   \item{count_homogr}{counts the number of homograms of a word}
+#'   \item{count_homoph}{counts the number of homographs of a word}
+#'   \item{count_phons}{counts the number of phonems in a word}
+#'   \item{count_syll}{counts the number of syllables in a word}
+#'   \item{count_morph}{counts the number of morphems in a word}
+#'}
 #'
-#' @return
+#' @param df the dataframe
+#' @param col the column with words
+#'
+#' @return a data.frame with words and a column with the specific count of element
 #' @export
 #'
 #' @rdname counter
