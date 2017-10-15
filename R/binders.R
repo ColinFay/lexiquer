@@ -3,6 +3,9 @@
 #' @param df the dataframe
 #' @param col the column with words
 #'
+#' @import rlang
+#' @importFrom dplyr select rename
+#'
 #' @return a tibble
 #' @export
 #'
@@ -68,6 +71,42 @@ bind_gram_cat <- function(df, col){
   col <- enexpr(col)
   lex <- lexique %>%
     select(ortho, cgramortho) %>%
+    rename(!! col := ortho)
+  left_join(df, lex)
+}
+
+#' @rdname binders
+#' @export
+
+bind_gender <- function(df, col){
+  data(list = "lexique", package = "lexiquer", envir = environment())
+  col <- enexpr(col)
+  lex <- lexique %>%
+    select(ortho, genre) %>%
+    rename(!! col := ortho)
+  left_join(df, lex)
+}
+
+#' @rdname binders
+#' @export
+
+bind_infover <- function(df, col){
+  data(list = "lexique", package = "lexiquer", envir = environment())
+  col <- enexpr(col)
+  lex <- lexique %>%
+    select(ortho, infover) %>%
+    rename(!! col := ortho)
+  left_join(df, lex)
+}
+
+#' @rdname binders
+#' @export
+
+bind_infover <- function(df, col){
+  data(list = "lexique", package = "lexiquer", envir = environment())
+  col <- enexpr(col)
+  lex <- lexique %>%
+    select(ortho, infover) %>%
     rename(!! col := ortho)
   left_join(df, lex)
 }

@@ -18,5 +18,6 @@ a tibble
 Is the word a lemme?
 }
 \examples{
-
+a <- data.frame(words = c("mer", "poulet", "lapin"))
+is_lemme(a, words)
 }

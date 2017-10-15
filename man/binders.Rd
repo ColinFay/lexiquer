@@ -6,6 +6,9 @@
 \alias{bind_phonem}
 \alias{bind_morphem}
 \alias{bind_gram_cat}
+\alias{bind_gender}
+\alias{bind_infover}
+\alias{bind_infover}
 \title{Binders functions}
 \usage{
 bind_homograph(df, col)
@@ -17,6 +20,12 @@ bind_phonem(df, col)
 bind_morphem(df, col)
 
 bind_gram_cat(df, col)
+
+bind_gender(df, col)
+
+bind_infover(df, col)
+
+bind_infover(df, col)
 }
 \arguments{
 \item{df}{the dataframe}
@@ -31,8 +40,8 @@ Binders functions
 }
 \examples{
 ad <- proustr::albertinedisparue
-baka <- tidytext::unnest_tokens(ad, word, text) \%>\%
-    count(word)
-bind_homograph(baka, word)
-bind_gram_cat(baka, word)
+baka <- tidytext::unnest_tokens(ad, mots, text) \%>\%
+    count(mots)
+bind_homograph(baka, mots)
+bind_gram_cat(baka, mots)
 }

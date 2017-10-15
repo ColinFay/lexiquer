@@ -61,6 +61,8 @@ tm %>%
 
 `{lexiquer}` provides a series of wrapper to bind specific part of the corpus to your text. See the `bind_*` functions for more details. 
 
+For example, you can binf the grammatical category of the word: 
+
 ```{r}
 bind_gram_cat(tm, word)
 ```
@@ -71,6 +73,14 @@ Test if a word is a lemme :
 
 ```{r}
 is_lemme(tm, word)
+```
+
+### `count_*` wrappers
+
+Several counting functions are available:
+
+```{r}
+count_syll(tm, word)
 ```
 
 
