@@ -45,11 +45,11 @@ library(proustr)
 library(tidyverse)
 
 sw <- proust_stopwords()
-ad <- albertinedisparue
+ds <- ducotedechezswann
 
-tm <- unnest_tokens(ad, word, text) %>%
-  count(word) %>%
-  anti_join(sw) 
+tm <- unnest_tokens(ds, word, text) %>%
+  slice(1:10) %>%
+  select(word)
 tm %>%
   left_join(lexique, by = c("word" = "ortho")) %>%
   select(lemme, cgramortho) %>%
@@ -67,6 +67,12 @@ For example, you can binf the grammatical category of the word:
 
 ```{r}
 bind_gram_cat(tm, word)
+```
+
+Or the lemme
+
+```{r}
+bind_lemme(tm, word)
 ```
 
 ### `is_lemme` 

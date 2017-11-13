@@ -4,6 +4,7 @@
 #'   \item{bind_gram_cat}{bind the grammatical category of a word}
 #'   \item{bind_gender}{bind the gender of a word (if appliable)}
 #'   \item{bind_infover}{bind the verbal info of a verb (if appliable)}
+#'   \item{bind_infover}{bind the lemme to a word}
 #'}
 #'
 #' @param df the dataframe
@@ -58,6 +59,19 @@ bind_infover <- function(df, col){
     select(ortho, infover) %>%
     rename(!! col := ortho)
   left_join(df, lex)
+}
+
+#' @rdname binders
+#' @export
+
+bind_lemme <- function(df, col){
+  data(list = "lexique", package = "lexiquer", envir = environment())
+  col <- enexpr(col)
+  lex <- lexique %>%
+    select(ortho, lemme) %>%
+    rename(!! col := ortho)
+  left_join(df, lex) %>%
+    unique()
 }
 
 

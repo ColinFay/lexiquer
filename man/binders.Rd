@@ -4,6 +4,7 @@
 \alias{bind_gram_cat}
 \alias{bind_gender}
 \alias{bind_infover}
+\alias{bind_lemme}
 \title{Binders functions}
 \usage{
 bind_gram_cat(df, col)
@@ -11,6 +12,8 @@ bind_gram_cat(df, col)
 bind_gender(df, col)
 
 bind_infover(df, col)
+
+bind_lemme(df, col)
 }
 \arguments{
 \item{df}{the dataframe}
@@ -25,6 +28,7 @@ a tibble
   \item{bind_gram_cat}{bind the grammatical category of a word}
   \item{bind_gender}{bind the gender of a word (if appliable)}
   \item{bind_infover}{bind the verbal info of a verb (if appliable)}
+  \item{bind_infover}{bind the lemme to a word}
 }
 }
 \examples{
